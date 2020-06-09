@@ -18,17 +18,17 @@ def usage():
 
 
 def main():
-    
+
     try:
-        option, arguments = getopt.getopt(sys.argv[1:],"hn:r",["help","number=","root"])
+        option, arguments = getopt.getopt(
+            sys.argv[1:], "hn:r", ["help", "number=", "root"]
+        )
     except getopt.GetoptError as error:
         print(error)
         sys.exit()
 
-
     number = None
     root_number = False
-
 
     for opt, variable in option:
         if opt in ("-h", "--help"):
@@ -36,18 +36,17 @@ def main():
             sys.exit()
         elif opt in ("-n", "--number"):
             number = int(variable)
-        elif opt in ('-r','--root'):
+        elif opt in ("-r", "--root"):
             root_number = True
         else:
             usage()
             sys.exit()
-   
+
     if root_number:
         print(f"The square root of {number} = {sqrt(number)}")
     else:
         print(f"The square of {number} = {number* number} ")
-    
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

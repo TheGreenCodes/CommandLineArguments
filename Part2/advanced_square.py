@@ -12,4 +12,4 @@ parser.add_argument("square", help=" the input value whos square is needed", typ
 
 arguments = parser.parse_args()
 
-print(arguments.square**2)
+print(arguments.square ** 2)
